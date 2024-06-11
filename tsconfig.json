@@ -11,6 +11,12 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "paths": {
+      "ng-dynamic-form": [
+        "dist/ng-dynamic-form/ng-dynamic-form",
+        "dist/ng-dynamic-form"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
