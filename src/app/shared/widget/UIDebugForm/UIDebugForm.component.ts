@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, isDevMode } from '@angular/core';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'UIDebugForm',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./UIDebugForm.component.sass']
 })
 export class UIDebugFormComponent implements OnInit {
+  @Input() formModel?: FormGroup
+  formStatus?: string = ''
+  isDev = isDevMode();
 
-  constructor() { }
+  constructor(private formGroupDirective: FormGroupDirective) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.formGroupDirective.control.statusChanges.subscribe(status => this.formStatus = status);
   }
 
 }
