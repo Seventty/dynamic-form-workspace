@@ -1,3 +1,5 @@
-<form>
-  <UIDebugForm></UIDebugForm>
+<form [formGroup]="formGroup">
+  <UIDebugForm class="m-1 bg-danger" [formModel]="formGroup.value"></UIDebugForm>
+  <div class="form-row">
+  </div>
 </form>
